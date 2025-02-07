@@ -50,9 +50,9 @@ public partial class MainPage : ContentPage
         // 更新 UI（必须切换到主线程）
         MainThread.InvokeOnMainThreadAsync(() =>
         {
-            LabelX.Text = $"X: {acceleration.X:F2}";
-            LabelY.Text = $"Y: {acceleration.Y:F2}";
-            LabelZ.Text = $"Z: {acceleration.Z:F2}";
+            LabelX.Text = $"X: {acceleration.X:F2} m/s²";
+            LabelY.Text = $"Y: {acceleration.Y:F2} m/s²";
+            LabelZ.Text = $"Z: {acceleration.Z:F2} m/s²";
         });
     }
 
