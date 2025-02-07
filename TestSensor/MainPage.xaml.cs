@@ -42,7 +42,7 @@ public partial class MainPage : ContentPage
         }
     }
 
-    private void OnReadingChanged(object sender, AccelerometerChangedEventArgs e)
+    private void OnReadingChanged(object? sender, AccelerometerChangedEventArgs e)
     {
         // 读取数据（示例：加速度计）
         var acceleration = e.Reading.Acceleration;
