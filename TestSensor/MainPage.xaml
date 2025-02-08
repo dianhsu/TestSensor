@@ -1,46 +1,58 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:TestSensor;assembly=TestSensor"
+             xmlns:local="clr-namespace:TestSensor.ViewModels;assembly=TestSensor"
              xmlns:lvc="clr-namespace:LiveChartsCore.SkiaSharpView.Maui;assembly=LiveChartsCore.SkiaSharpView.Maui"
              Shell.FlyoutBehavior="Disabled"
-             x:DataType="local:ViewModels.Line"
+             x:DataType="local:Line"
              x:Class="TestSensor.MainPage">
     <ContentPage.BindingContext>
-        <local:ViewModels.Line/>
+        <local:Line/>
     </ContentPage.BindingContext>
     <ContentPage.Content>
         <VerticalStackLayout Margin="20,35,20,25">
-            <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="100"/>
-            </Grid.RowDefinitions>
-            <lvc:CartesianChart
-                Series="{Binding Series}">
-            </lvc:CartesianChart>
-            </Grid>
+                <lvc:CartesianChart
+                    x:Name="Chart"
+                    HeightRequest="250"
+                    XAxes="{Binding XAxes}"
+                    YAxes="{Binding YAxes}"
+                    Series="{Binding Series}">
+                </lvc:CartesianChart>
 
             <Label
                 x:Name="LabelX"
-                Text="X"
-                Style="{StaticResource SubHeadline}"
+                Text=""
                 SemanticProperties.HeadingLevel="Level2"
                 SemanticProperties.Description="Welcome to dot net Multi platform App U I"/>
 
             <Label
                 x:Name="LabelY"
-                Text="Y"
-                Style="{StaticResource SubHeadline}"
+                Text=""
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Welcome to dot net Multi platform App U I"/>
+            <Label
+                x:Name="LabelZ"
+                Text=""
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Welcome to dot net Multi platform App U I"/>
+            <Label
+                x:Name="LabelMax"
+                Text=""
                 SemanticProperties.HeadingLevel="Level2"
                 SemanticProperties.Description="Welcome to dot net Multi platform App U I"/>
 
             <Label
-                x:Name="LabelZ"
-                Text="Z"
-                Style="{StaticResource SubHeadline}"
+                x:Name="LabelAvg"
+                Text=""
                 SemanticProperties.HeadingLevel="Level2"
                 SemanticProperties.Description="Welcome to dot net Multi platform App U I"/>
+
+            <Button
+                x:Name="btnToggle"
+                Text="Start"
+                Clicked="BtnToggle_Clicked"
+                SemanticProperties.Description="Welcome to dot net Multi platform App U I" 
+                />
         </VerticalStackLayout>
     </ContentPage.Content>
 
