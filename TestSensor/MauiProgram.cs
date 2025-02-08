@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
+using Microsoft.Maui.Controls.Hosting;
+using Microsoft.Maui.Hosting;
 using SkiaSharp.Views.Maui.Controls.Hosting; 
 using LiveChartsCore.SkiaSharpView.Maui;
 
